@@ -1,0 +1,103 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --font-geist-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    --font-geist-mono: "Courier New", Courier, monospace;
+    --font-cabinet-grotesk: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  }
+
+  html {
+    @apply scroll-smooth;
+  }
+
+  body {
+    @apply bg-white text-dark-900 antialiased dark:bg-dark-950 dark:text-white;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-dark-100 dark:bg-dark-900;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply rounded-full bg-primary-500 dark:bg-primary-600;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-primary-600 dark:bg-primary-500;
+}
+
+
+.terminal-window {
+  background: #1e1e1e;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.code-block {
+  font-family: 'Fira Code', 'Courier New', monospace;
+  background: #282c34;
+  padding: 1rem;
+  border-radius: 0.5rem;
+}
+
+
+@keyframes blink {
+
+  0%,
+  50% {
+    opacity: 1;
+  }
+
+  51%,
+  100% {
+    opacity: 0;
+  }
+}
+
+.cursor-blink {
+  animation: blink 1s infinite;
+}
+
+
+.grid-pattern {
+  background-image:
+    linear-gradient(rgba(59, 130, 246, 0.1) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(59, 130, 246, 0.1) 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+
+.syntax-keyword {
+  color: #c678dd;
+}
+
+.syntax-string {
+  color: #98c379;
+}
+
+.syntax-function {
+  color: #61afef;
+}
+
+.syntax-variable {
+  color: #e06c75;
+}
+
+.syntax-comment {
+  color: #5c6370;
+}
